@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Картинная галерея</title>
+</head>
+<body>
+    <h1>Картинная галерея</h1>
+    <nav>
+        <a href="{{ url_for('login') }}">Войти</a>
+        <a href="{{ url_for('register') }}">Регистрация</a>
+        <a href="{{ url_for('collection') }}">Мои Картины</href=>
+    </nav>
+        <div class="painting-container">
+        <img src="{{ url_for('static', filename='golang.jpg') }}">
+        <form action = '/add_to_collection' method="post">
+            <input type = 'hidden' name = 'image_name' value = 'golang.jpg'>
+            <button type = 'submit' >Добавить изображение к себе</button>
+        </form>
+        <img src="{{ url_for('static', filename='pinguin.jpg') }}">
+        <form action = '/add_to_collection' method="post">
+            <input type = 'hidden' name = 'image_name' value = 'pinguin.jpg'>
+            <button type = 'submit' >Добавить изображение к себе</button>
+        </form>
+        </div>
+    </section>
+</body>
+</html>
